@@ -10,6 +10,7 @@ const Home = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const inputValue = e.target.name.value.trim();
+    console.log(inputValue);
     if (inputValue !== 0) {
       dispatch(setName(inputValue));
       navigate("/pokedex");

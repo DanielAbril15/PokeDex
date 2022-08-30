@@ -126,57 +126,58 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   border-radius: 5px;
+  cursor: pointer;
 }
 .grass-border {
-  border: 10px solid var(--grass);
+  border: 8px solid var(--grass);
 }
 .fire-border {
-  border: 10px solid var(--fire);
+  border: 8px solid var(--fire);
 }
 .water-border {
-  border: 10px solid var(--water);
+  border: 8px solid var(--water);
 }
 .bug-border {
-  border: 10px solid var(--bug);
+  border: 8px solid var(--bug);
 }
 .normal-border {
-  border: 10px solid var(--normal);
+  border: 8px solid var(--normal);
 }
 .poison-border {
-  border: 10px solid var(--poison);
+  border: 8px solid var(--poison);
 }
 .electric-border {
-  border: 10px solid var(--electric);
+  border: 8px solid var(--electric);
 }
 .ground-border {
-  border: 10px solid var(--ground);
+  border: 8px solid var(--ground);
 }
 .fighthing-border {
-  border: 10px solid var(--fighthing);
+  border: 8px solid var(--fighthing);
 }
 .psychic-border {
-  border: 10px solid var(--psychic);
+  border: 8px solid var(--psychic);
 }
 .fairy-border {
-  border: 10px solid var(---fairy);
+  border: 8px solid var(---fairy);
 }
 .steel-border {
-  border: 10px solid var(---steel);
+  border: 8px solid var(---steel);
 }
 .ghost-border {
-  border: 10px solid var(--ghost);
+  border: 8px solid var(--ghost);
 }
 .ice-border {
-  border: 10px solid var(--ice);
+  border: 8px solid var(--ice);
 }
 .dragon-border {
-  border: 10px solid var(--dragon);
+  border: 8px solid var(--dragon);
 }
 .dark-border {
-  border: 10px solid var(--dark);
+  border: 8px solid var(--dark);
 }
 .rock-border {
-  border: 10px solid var(--rock);
+  border: 8px solid var(--rock);
 }
 
 .grass {
@@ -231,6 +232,7 @@
 .rock {
   background: var(--gradient-rock);
 }
+
 .card__header {
   position: relative;
 }

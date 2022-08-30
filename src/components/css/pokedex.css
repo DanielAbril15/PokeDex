@@ -1,3 +1,13 @@
+.pokedex__welcome p {
+  width: 80%;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.pokedex__welcome span {
+  color: #dd1a1a;
+  font-weight: bold;
+}
+
 .cards__container {
   display: flex;
   flex-wrap: wrap;
