@@ -3,13 +3,22 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Header from "./Header";
 import "./css/pokemonInfo.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const PokemonInfo = () => {
   const [searchPokemon, setSearchPokemon] = useState();
 
+  const navigate = useNavigate();
+
+  const handleBack = (e) => {
+    e.preventDefault();
+    navigate("/pokedex");
+  };
+
   const pokemon = useSelector((state) => state.namePokemon);
+
   const { name } = useParams();
+
   useEffect(() => {
     let URL;
     if (name) {
@@ -22,12 +31,16 @@ const PokemonInfo = () => {
       .then((res) => setSearchPokemon(res.data))
       .catch((err) => console.log(err));
   }, []);
+  console.log(searchPokemon);
 
   const imagePokemon =
     searchPokemon?.sprites.other["official-artwork"]["front_default"];
   console.log(searchPokemon);
   return (
     <article className="info__container">
+      <button onClick={handleBack} className="btn-back">
+        &#60;
+      </button>
       <Header />
       <section className="info__principal">
         <section
@@ -79,20 +92,29 @@ const PokemonInfo = () => {
           <p className="stats__title">Stats</p>
 
           {searchPokemon?.stats.map((statPokemon) => (
-            <div key={statPokemon.stat.name}>
+            <div key={statPokemon.stat.name} className="stat__container">
               <div className="stat">
-                <span>{statPokemon.stat.name}</span>
+                <span>{statPokemon.stat.name.toUpperCase()}:</span>
                 <span>{statPokemon["base_stat"]}/150</span>
               </div>
 
               <p className="stat__percent">
-                <span style={{ width: `${statPokemon["base_stat"]}%` }}></span>
+                <span
+                  style={{ width: `${statPokemon["base_stat"] * 2}px` }}
+                ></span>
               </p>
             </div>
           ))}
         </section>
       </section>
-      <div></div>
+      <section className="movements">
+        <p>Movements</p>
+        <div>
+          {searchPokemon?.moves.map((movePokemon) => (
+            <span key={movePokemon.move.name}>{movePokemon.move.name}</span>
+          ))}
+        </div>
+      </section>
     </article>
   );
 };

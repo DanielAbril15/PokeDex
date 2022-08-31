@@ -1,0 +1,8 @@
+.selector {
+  height: 30px;
+  border: none;
+  box-shadow: 1px 1px 5px #a2a0a0;
+  padding-left: 20px;
+  margin-right: 5px;
+  color: #555555;
+}

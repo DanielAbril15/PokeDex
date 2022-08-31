@@ -7,12 +7,18 @@
   color: #dd1a1a;
   font-weight: bold;
 }
-
+.inputs__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 60px;
+  justify-content: center;
+  padding: 20px;
+}
 .cards__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 16px;
-  padding: 50px 0px;
+  padding: 30px 0px;
 }
