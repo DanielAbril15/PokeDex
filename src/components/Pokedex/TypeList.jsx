@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../css/typeList.css";
 
-const TypeList = ({ setOptionType }) => {
+const TypeList = ({ setOptionType, paginate }) => {
   const [listType, setListType] = useState();
 
   useEffect(() => {
@@ -15,6 +15,7 @@ const TypeList = ({ setOptionType }) => {
 
   const handleChange = (e) => {
     setOptionType(e.target.value);
+    paginate(1);
   };
 
   return (

@@ -51,7 +51,7 @@ const Pokedex = () => {
       </div>
       <div className="inputs__container">
         <FormPokedex pokemons={pokemons} />
-        <TypeList setOptionType={setOptionType} />
+        <TypeList setOptionType={setOptionType} paginate={paginate} />
       </div>
 
       <div className="cards__container">
