@@ -100,7 +100,9 @@ const PokemonInfo = () => {
 
               <p className="stat__percent">
                 <span
-                  style={{ width: `${statPokemon["base_stat"] * 2}px` }}
+                  style={{
+                    width: `${(statPokemon["base_stat"] * 100) / 150}%`,
+                  }}
                 ></span>
               </p>
             </div>

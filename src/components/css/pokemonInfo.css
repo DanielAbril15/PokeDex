@@ -1,5 +1,6 @@
 .info__principal {
   width: 90%;
+  max-width: 500px;
   height: 750px;
   margin: auto;
   position: relative;
@@ -15,7 +16,7 @@
   border-radius: 50%;
   border: none;
   position: absolute;
-  left: 20px;
+  left: 11%;
   top: 120px;
   background-color: #dd1a1a;
   color: #ffff;
@@ -137,7 +138,7 @@
 }
 .stat {
   display: flex;
-  padding: 0px 20px;
+  padding: 0px 10%;
   justify-content: space-between;
 }
 .stat span:nth-child(1) {
@@ -148,7 +149,7 @@
   font-size: 11px;
 }
 .stat__percent {
-  width: 300px;
+  width: 85%;
   height: 20px;
   background-color: #e5e5e5;
   display: flex;
@@ -165,6 +166,7 @@
 }
 .movements {
   width: 90%;
+  max-width: 700px;
   margin: auto;
   position: relative;
   margin-bottom: 20px;
@@ -190,4 +192,9 @@
   padding: 2px 6px;
   background-color: #e5e5e5;
   border-radius: 6px;
+}
+@media (min-width: 500px) {
+  .info__principal {
+    height: 650px;
+  }
 }
