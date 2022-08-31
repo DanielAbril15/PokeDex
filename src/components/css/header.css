@@ -23,3 +23,12 @@ header div:nth-child(2) img {
   bottom: 10px;
   right: 20px;
 }
+@media (min-width: 800px) {
+  header div:nth-child(1) img {
+    width: 270px;
+    left: 10%;
+  }
+  header div:nth-child(2) img {
+    right: 10%;
+  }
+}

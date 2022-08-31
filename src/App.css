@@ -30,6 +30,12 @@
     #bc6b7c 121.95%,
     #7c3f4c 186.11%
   );
+  --gradient-flying: linear-gradient(
+    181.51deg,
+    #60484d -6.44%,
+    #a26c78 121.95%,
+    #5e3a42 186.11%
+  );
   --gradient-poison: linear-gradient(
     177.03deg,
     #5b3184 -11.97%,
@@ -112,13 +118,14 @@
   --ground: #654008;
   --fighthing: #96402a;
   --psychic: #0c1395;
-  ---fairy: #971b45;
-  ---steel: #5e736c;
+  --fairy: #971b45;
+  --steel: #5e736c;
   --ghost: #323569;
   --ice: #6fbedf;
   --dragon: #478a93;
   --dark: #030706;
   --rock: #7e7e7e;
+  --flying: #a26c78;
 }
 * {
   margin: 0;

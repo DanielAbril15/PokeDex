@@ -7,11 +7,14 @@ import Header from "./Header";
 import { useSelector } from "react-redux";
 import FormPokedex from "./Pokedex/FormPokedex";
 import TypeList from "./Pokedex/TypeList";
+import Pagination from "./Pokedex/Pagination";
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState();
   const [optionType, setOptionType] = useState("All");
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pokePerPage, setPokePerPage] = useState(20);
+  console.log(pokemons);
   useEffect(() => {
     if (optionType !== "All") {
       const URL = `https://pokeapi.co/api/v2/type/${optionType}/`;
@@ -20,15 +23,24 @@ const Pokedex = () => {
         setPokemons({ results: arr });
       });
     } else {
-      const URL = "https://pokeapi.co/api/v2/pokemon";
+      const URL = "https://pokeapi.co/api/v2/pokemon/?limit=1154&offset=0";
       axios
         .get(URL)
         .then((res) => setPokemons(res.data))
         .catch((err) => console.log(err));
     }
   }, [optionType]);
+
   const user = useSelector((state) => state.nameTrainer);
 
+  const indexOfLastPoke = currentPage * pokePerPage;
+  const indexOfFirstPoke = indexOfLastPoke - pokePerPage;
+  const currentPokemons = pokemons?.results.slice(
+    indexOfFirstPoke,
+    indexOfLastPoke
+  );
+  console.log(pokemons?.results.length);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <section>
       <Header />
@@ -43,10 +55,17 @@ const Pokedex = () => {
       </div>
 
       <div className="cards__container">
-        {pokemons?.results.map((pokemon) => (
+        {currentPokemons?.map((pokemon) => (
           <PokemonCard key={pokemon.name} url={pokemon.url} />
         ))}
       </div>
+      <section className="pagination">
+        <Pagination
+          pokePerPage={pokePerPage}
+          totalPokemons={pokemons?.results.length}
+          paginate={paginate}
+        />
+      </section>
     </section>
   );
 };
